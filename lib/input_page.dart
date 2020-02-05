@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'reusable_card.dart';
@@ -41,6 +42,8 @@ class _InputPageState extends State<InputPage> {
                        selectedGender = Gender.male;
                      });
                    },
+//
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
                     child: ReusableCard(
                       colour: selectedGender == Gender.male ? activeCardColour : inactiveCardColor,
                        cardChild: InsideCard(
@@ -57,6 +60,7 @@ class _InputPageState extends State<InputPage> {
                         selectedGender = Gender.female;
                       });
                     },
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
                     child: ReusableCard(
                       colour: selectedGender == Gender.female ? activeCardColour : inactiveCardColor,
                       cardChild: InsideCard(
