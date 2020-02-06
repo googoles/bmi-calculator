@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
+import 'result_page.dart';
 
 
 class InputPage extends StatefulWidget {
@@ -206,12 +207,9 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            width: double.infinity,
-            height: kbottomContainerHeight,
-            color: kbottomContainerColour,
-            margin: EdgeInsets.only(top: 10.0),
-          )
+            ButtomButton(buttonTitle: 'CALCULATE',
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage()));            },),
         ],
       ),
     );
@@ -243,3 +241,29 @@ class RoundIconButton extends StatelessWidget {
   }
 }
 
+class ButtomButton extends StatelessWidget {
+
+  ButtomButton({@required this.onTap,@required this.buttonTitle});
+
+  final Function onTap;
+  final String buttonTitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        child: Center(
+          child: Text(buttonTitle,
+            style: kLargeButtonTextStyle,
+          ),
+        ),
+        width: double.infinity,
+        height: kbottomContainerHeight,
+        color: kbottomContainerColour,
+        padding: EdgeInsets.only(bottom:20.0),
+        margin: EdgeInsets.only(top: 10.0),
+      ),
+    );
+  }
+}
