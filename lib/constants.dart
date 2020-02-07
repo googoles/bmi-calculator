@@ -11,7 +11,7 @@ const kBoxTextstyle = TextStyle(
 
 const kbottomContainerHeight = 70.0;
 const kactiveCardColour = Color(0xFF1D1E33);
-const kinactiveCardColor = Color(0xFF111328);
+const kinactiveCardColor = Color(0xFFFFFFFF);
 //const inactiveCardColor = Colors.red;
 const kbottomContainerColour = Color(0xFFC7A4FF);
 const kPageCardColour = Color(0xFFC7A4FF);
